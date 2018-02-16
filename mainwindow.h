@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QUrl>
 
 namespace Ui {
 class MainWindow;
@@ -9,6 +10,7 @@ class MainWindow;
 
 class QWebEnginePage;
 class DbManager;
+class QTableWidgetItem;
 
 class MainWindow : public QMainWindow
 {
@@ -26,10 +28,15 @@ private:
     QStringList anchors;
     QStringList descriptions;
     DbManager *db = nullptr;
+    QUrl lastUrl;
 
 public slots:
     void OnPageLoad(bool);
     void OnTimerTimeout();
+private slots:
+    void on_tableWidget_2_itemClicked(QTableWidgetItem *item);
+    void on_pushButton_clicked();
+    void on_lineEdit_textChanged(const QString &arg1);
 };
 
 #endif // MAINWINDOW_H
