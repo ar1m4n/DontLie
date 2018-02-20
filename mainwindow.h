@@ -3,14 +3,18 @@
 
 #include <QMainWindow>
 #include <QUrl>
+#include <QMap>
+#include <QSet>
 
 namespace Ui {
 class MainWindow;
 }
 
+class QNetworkAccessManager;
 class QWebEnginePage;
 class DbManager;
 class QTableWidgetItem;
+class QNetworkReply;
 
 class MainWindow : public QMainWindow
 {
@@ -23,16 +27,22 @@ public:
 private:
     Ui::MainWindow *ui;
     QWebEnginePage * webPage = nullptr;
-    QString baseURL;
+    static const QString baseURL;
     int pageCount = 0;
     QStringList anchors;
     QStringList descriptions;
+    QStringList pictures;
     DbManager *db = nullptr;
     QUrl lastUrl;
+    QNetworkAccessManager *networkAccMgr = nullptr;
+    QMap<QString, QPair<int, QMap<QString, QString>>> picOcc;
 
 public slots:
     void OnPageLoad(bool);
     void OnTimerTimeout();
+    void OnPicBeginLoad();
+    void OnPicEndLoad(QNetworkReply*);
+
 private slots:
     void on_tableWidget_2_itemClicked(QTableWidgetItem *item);
     void on_pushButton_clicked();

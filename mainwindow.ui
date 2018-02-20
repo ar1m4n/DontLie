@@ -17,11 +17,11 @@
    <layout class="QVBoxLayout" name="verticalLayout" stretch="1,5">
     <item>
      <widget class="QWidget" name="widget" native="true">
-      <layout class="QVBoxLayout" name="verticalLayout_2" stretch="2,2,2,1">
+      <layout class="QVBoxLayout" name="verticalLayout_2" stretch="0,2,2,1">
        <item>
-        <widget class="QLabel" name="adLabel">
+        <widget class="QLabel" name="pageLabel">
          <property name="sizePolicy">
-          <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
@@ -32,9 +32,9 @@
         </widget>
        </item>
        <item>
-        <widget class="QLabel" name="pageLabel">
+        <widget class="QLabel" name="adLabel">
          <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+          <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
@@ -83,7 +83,7 @@
          </attribute>
          <column>
           <property name="text">
-           <string>Ad Url</string>
+           <string>Ad Picture</string>
           </property>
          </column>
         </widget>
@@ -98,12 +98,12 @@
          </attribute>
          <column>
           <property name="text">
-           <string>Matching Ad Url</string>
+           <string>Date Added</string>
           </property>
          </column>
          <column>
           <property name="text">
-           <string>Match Percentage</string>
+           <string>Ad Url</string>
           </property>
          </column>
         </widget>
